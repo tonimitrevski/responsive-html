@@ -5,16 +5,26 @@
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://unpkg.com/vue"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="body">
+<div id="app">
     <header class="full-with">
         <div class="center-container">
             <div class="header-logo">
                 <a href="javascript:;">Logo</a>
             </div>
-            <div class="header-menu">
+            <div id="small-menu" class="header-menu-button">
+                <div @click="toggleClick()" id="nav-icon3" :class="{ open: toggleMenu }">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="menu" class="header-menu" :class="{ open: toggleMenu }">
                 <ul>
                     <li><a href="javascript:;">How it Works</a></li>
                     <li><a href="javascript:;">Maximise ROI </a></li>
@@ -47,7 +57,7 @@
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +71,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +85,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +99,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +113,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -117,7 +127,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </span>
                         <div class="block-button-section">
-                            <button class="btn btn-success">Read More</button>
+                            <a href="javascript:;">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -158,5 +168,21 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
         </div>
     </footer>
+</div>
 </body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                toggleMenu: false
+            }
+        },
+        methods: {
+            toggleClick: function () {
+                this.toggleMenu = !this.toggleMenu;
+            }
+        }
+    })
+</script>
 </html>
